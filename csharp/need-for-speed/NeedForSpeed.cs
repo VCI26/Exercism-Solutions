@@ -14,15 +14,9 @@ class RemoteControlCar
         this.batteryDrain = batteryDrain;
     }
 
-    public bool BatteryDrained()
-    {
-        return this.battery < this.batteryDrain ;        
-    }
+    public bool BatteryDrained() => this.battery <= 0 || (this.battery - this.batteryDrain) < 0; 
 
-    public int DistanceDriven()
-    {
-        return this.driven;
-    }
+    public int DistanceDriven() => this.driven;
 
     public void Drive()
     {
@@ -32,11 +26,7 @@ class RemoteControlCar
             this.battery -= this.batteryDrain;           
         }
     }
-
-    public static RemoteControlCar Nitro()
-    {
-        return new RemoteControlCar(50, 4);
-    }
+    public static RemoteControlCar Nitro() => new RemoteControlCar(50, 4);
 }
 
 class RaceTrack
@@ -46,18 +36,15 @@ class RaceTrack
 
     public RaceTrack(int distance)
     {
-        this.distance = distance;
+        this.distance = distance;        
     }
-
     public bool TryFinishTrack(RemoteControlCar car)
     {
         //See max distance can drive;
-        while (car.BatteryDrained())
+        while (!car.BatteryDrained())
         {
             car.Drive();            
         }
-        return car.DistanceDriven() <= this.distance;
+        return car.DistanceDriven() >= this.distance;
     }
 }
-
-
