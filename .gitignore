@@ -1,9 +1,1 @@
-# Visual Studio-related
 .vs/
-
-# Build and debug output
-bin/
-obj/
-
-# Auto-generated AssemblyInfo files
-*.AssemblyInfo.cs
