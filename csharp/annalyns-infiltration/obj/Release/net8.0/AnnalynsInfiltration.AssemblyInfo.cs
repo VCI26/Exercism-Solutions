@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AnnalynsInfiltration")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e882dd68227182c582347f307926eeb4663cb6b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+171484f32b3ca2d110ec5ead4fc5d4867091719f")]
 [assembly: System.Reflection.AssemblyProductAttribute("AnnalynsInfiltration")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AnnalynsInfiltration")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
