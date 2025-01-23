@@ -14,42 +14,14 @@ static class QuestLogic
 
     public static bool CanSignalPrisoner(bool archerIsAwake, bool prisonerIsAwake)
     {
-        if (!archerIsAwake && prisonerIsAwake)
-        {
-            return true;
-        }
-        return false;
+
+        return !archerIsAwake && prisonerIsAwake;
     }
 
     public static bool CanFreePrisoner(bool knightIsAwake, bool archerIsAwake, bool prisonerIsAwake, bool petDogIsPresent)
     {
-        if (petDogIsPresent)
-        {
-            if (!knightIsAwake &&  !archerIsAwake && !prisonerIsAwake)
-            {
-                return true;
-            }
-            if (!knightIsAwake && !archerIsAwake && prisonerIsAwake)
-            {
-                return true;
-            }
-            if (knightIsAwake && !archerIsAwake && !prisonerIsAwake)
-            {
-                return true;
-            }
-            if (knightIsAwake && !archerIsAwake && prisonerIsAwake)
-            {
-                return true;
-            }
-        }
-        if (!petDogIsPresent)
-        {
-            if(!knightIsAwake && !archerIsAwake && prisonerIsAwake)
-            {
-                return true;
-            }
-        }
-        return false;
+
+        return (petDogIsPresent && archerIsAwake) || (!petDogIsPresent && prisonerIsAwake && !archerIsAwake && !knightIsAwake);
 
     }
 }
