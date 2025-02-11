@@ -2,6 +2,8 @@ using System;
 
 static class AssemblyLine
 {
+    private static readonly int _baseProductionRatePerHour = 221;
+
     public static double SuccessRate(int speed)
     {
         if (speed <= 0) return 0;
@@ -12,7 +14,7 @@ static class AssemblyLine
     }    
     public static double ProductionRatePerHour(int speed)
     {
-        return speed * 221 * SuccessRate(speed);
+        return speed * _baseProductionRatePerHour * SuccessRate(speed);
     }
     public static int WorkingItemsPerMinute(int speed)
     {
