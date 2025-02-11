@@ -4,17 +4,10 @@ public static class PhoneNumber
 {
     public static (bool IsNewYork, bool IsFake, string LocalNumber) Analyze(string phoneNumber)
     {
-        bool isNewYork = false;
-        bool isFake = false;
-        
-        string dialingCode = phoneNumber.Split('-')[0];
-        string prefixCode = phoneNumber.Split('-')[1];
-        string number = phoneNumber.Split('-')[2];
 
-        if (dialingCode == "212") { isNewYork = true;}
-        if (prefixCode == "555") { isFake = true;}
+        string[] phoneNumberInfo = phoneNumber.Split('-');
 
-        return (isNewYork, isFake, number);        
+        return (phoneNumberInfo[0] == "212", phoneNumberInfo[1] == "555", phoneNumberInfo[2]);        
     }
 
     public static bool IsFake((bool IsNewYork, bool IsFake, string LocalNumber) phoneNumberInfo)
